@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なぞのこたえ</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #8b0000;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #8b0000;
+            box-shadow: 0 0 20px #8b0000;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 20px #8b0000; }
+            50% { box-shadow: 0 0 40px #ff0000; }
+            100% { box-shadow: 0 0 20px #8b0000; }
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px #ff0000;
+        }
+        input {
+            background-color: #1a0000;
+            color: #ff0000;
+            border: 1px solid #8b0000;
+            padding: 10px;
+            font-size: 1.2em;
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #8b0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>なぞのこたえ</h1>
+        <p>加奈の言いたかったことを、ひらがな4文字で答えてください。</p>
+        <input type="text" id="answer" maxlength="4" placeholder="ここに回答を入力">
+        <br>
+        <button onclick="checkAnswer()">答える</button>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById('answer').value;
+            if (answer === 'おかえし') {
+                window.location.href = 'https://teamkimi.wixsite.com/redclothes/seikai1/';
+            } else {
+                window.location.href = 'https://teamkimi.wixsite.com/fuseikai1';
+            }
+        }
+    </script>
+</body>
+</html>
